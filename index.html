@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa cartográfico Digital - IFSP Câmpus Capivari</title>
+
+    <!--Logo da página-->
+    <link rel="icon" href="imgs/ifsp-logo-removebg-preview.png">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/syle.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+
+
+
+</head>
+<body>
+    
+    <header><!--Incio Cabeçalho-->
+        <nav class="navbar navbar-expand-md">
+          <div class="container">
+            <a href="index.html" style="margin-right: 70px; padding: 5px;">
+              <img src="imgs/ifsp-logo-removebg-preview.png" width="170px">
+            </a>        
+
+            <div id="titulo">
+                <h5>IFSP - Mapa cartográfico digital</h5>
+                <h6 id="titulo-fonte">Câmpus Capivari</h6>
+            </div>
+
+            <button class="navbar-toggler" data-toggle="collapse"
+            data-target="#nav-principal">
+              <i class="fas fa-bars text-white"></i>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="nav-principal">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#sobre" class="nav-link">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Cursos</a>
+                  </li>
+                <li class="nav-item">
+                  <a href="#bcd" class="nav-link">BCD</a>
+                </li>
+  
+                <li class="nav-item divisor"></li>
+
+                <li class="nav-item">
+                  <a href="" class="nav-link">Entrar</a>
+                </li>
+              </ul>
+            </div>
+  
+          </div>
+        </nav>
+    </header><!--Fim Cabeçalho-->
+    
+    <section class="d-flex"><!--Incio Section Principal-->
+
+        <div class="container align-self-center">
+            <div class="row">
+
+              <div class="col-md-4 coluna" id="coluna-form"> <!--COLUNA DE FILTROS-->
+
+                <h3 class="mt-1">Nível</h3>
+                <select class="form-control select">
+                    <option>Escolher um nível</option>
+                    <option>Fundamental</option>
+                    <option>Médio</option>
+                    <option>Superior</option>
+                    <option>Pós-Graduação</option>
+                </select>
+
+                <h3>Cursos</h3>
+                <select class="form-control select">
+                    <option>Escolher um curso</option>
+                    <option></option>
+                </select>
+
+                <h3>Tipo</h3>
+                <select class="form-control select">
+                    <option>Escolher um tipo</option>
+                    <option>Concomitante</option>
+                    <option>Bacharelado</option>
+                    <option>integrado</option>
+                </select>
+
+                <h3>Especialidade (EJA)</h3>
+                <div>
+                    <input type="radio" name="eja_sim" id="eja_sim"> Sim
+                    <input type="radio" name="eja_nao" id="eja_nao" class="mb-3"> Não
+                </div>
+
+                <h3>Modalidade</h3>
+                <div>
+                    <input type="radio" name="presencial" id="presencial"> Presencial
+                    <input type="radio" name="ead" id="ead"> EAD
+                </div>
+
+                <button class="btn btn-success btn-block mt-4" type="button">Filtrar</button>
+
+              </div><!--COLUNA DE FILTROS-->
+
+              <div class="col-md-8 coluna" id="coluna-mapa"><!--COLUNA DO MAPA-->
+
+                <form class="form-inline mt-1" id="form-buscar-cidade">
+                    <input type="text" style="width: 300px;" class="form-control" placeholder="Digite a cidade  Ex: Capivari">
+                    <button class="btn btn-outline-success">Buscar</button>
+                </form>
+
+                <div id="map"></div>
+              </div>
+
+            </div>
+        </div>
+
+    </section><!--Fim Section-->
+
+    <section class="d-flex" id="sobre"><!--Início Section Sobre-->
+      
+      <div class="container align-self-center">
+        <div class="row">
+          <div class="col-md-12 coluna">
+            Conteudo 'Sobre'
+          </div>
+        </div>
+      </div>
+
+    </section><!--Fim Section Sobre-->
+
+    <section class="d-flex" id="bcd"><!--Início Section BCD-->
+      
+      <div class="container align-self-center">
+        <div class="row">
+          <div class="col-md-12 coluna">
+            Conteudo 'BCD'
+          </div>
+        </div>
+      </div>
+
+    </section><!--Fim Section BCD-->
+
+    <footer><!--Inicio Footer-->
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-2">
+                  <a href="index.html"> <img src="imgs/ifsp-logo-removebg-preview.png" width="80"> </a>
+                </div>
+                <div class="col-md-3">
+                  <h4>Menu</h4>
+                  <ul class="navbar-nav">
+                    <li>
+                      <a href="">Home</a>
+                    </li>
+                    <li>
+                      <a href="">Sobre</a>
+                    </li>
+                    <li>
+                      <a href="">Cursos</a>
+                    </li>
+                    <li>
+                      <a href="">BCD</a>
+                    </li>
+                    <li>
+                      <a href="">Entrar como ADM</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-3">
+                  <h4>Links úteis</h4>
+                  <ul class="navbar-nav">
+                    <li>
+                      <a href="">Ajuda</a>
+                    </li>
+                    <li>
+                      <a href="">Inscrições dos cursos</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-4">
+                  <ul>
+                    <li>
+                      <a href="https://www.facebook.com/IFSaoPaulo" target="_blank"><img src="imgs/facebook.png"></a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/ifsp_oficial/" target="_blank"><img src="imgs/instagram.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/ifsaopaulo" target="_blank"><img src="imgs/twitter.png"></a>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+    </footer><!--Fim Footer-->
+
+
+    <script> // Script para configuração inicial do mapa LeafLet
+
+        var capivari = [-22.976218983260722, -47.47417220000783]
+        var map = L.map('map').setView(capivari, 13); // -22.976218983260722, -47.47417220000783
+
+        var marker = L.marker(capivari).addTo(map);
+
+        function onMapClick(e){
+            marker.bindPopup("<b>IFSP - Capivari </b><br> <a href='https://cpv.ifsp.edu.br/' target='_blank'>Clique aqui para ser redirecionado para o site do câmpus</a>").openPopup();
+        }
+
+        map.on('click', onMapClick);    
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+    </script>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
