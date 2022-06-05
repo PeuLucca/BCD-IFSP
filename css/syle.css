@@ -88,15 +88,9 @@ footer ul li{
 
 #coluna-form{
     /*border: 2px solid rgba(0, 128, 0, 0.514);*/
-    border-right: 1px solid rgba(0, 128, 0, 0.514);
+    border-right: 1px solid #e5e5e5;
     height: 500px;
 }
-/*
-#coluna-mapa{
-    border-right: 2px solid rgba(0, 128, 0, 0.514);
-    border-top: 2px solid rgba(0, 128, 0, 0.514);
-    border-bottom: 2px solid rgba(0, 128, 0, 0.514);
-}*/
 
 #form-buscar-cidade{
     margin-left: 355px;
@@ -116,4 +110,19 @@ footer ul li{
 .select{
     width: 350px;
     margin-bottom: 10px;
+}
+
+.item-modalidade{
+    float: left;
+    margin-left: 35em;
+    margin-top: -165px;
+}
+
+.item-cursos{
+    margin-left: 50px;
+}
+
+.caixa {
+	padding: 60px 0;
+	border-bottom: 1px solid #e5e5e5;
 }

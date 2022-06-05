@@ -55,11 +55,11 @@
                   <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#sobre" class="nav-link">Sobre</a>
+                  <a href="#cursos" class="nav-link">Cursos</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">Cursos</a>
-                  </li>
+                  <a href="#sobre" class="nav-link">Sobre</a>
+                </li>
                 <li class="nav-item">
                   <a href="#bcd" class="nav-link">BCD</a>
                 </li>
@@ -67,7 +67,7 @@
                 <li class="nav-item divisor"></li>
 
                 <li class="nav-item">
-                  <a href="" class="nav-link">Entrar</a>
+                  <a href="" onclick="alert('Redirecionará para a área Administrativa')" class="nav-link">Entrar ADM</a>
                 </li>
               </ul>
             </div>
@@ -83,7 +83,7 @@
 
               <div class="col-md-4 coluna" id="coluna-form"> <!--COLUNA DE FILTROS-->
 
-                <h3 class="mt-1">Nível</h3>
+                <h3 class="mt-1 display-4" style="font-size: 30px;">Nível</h3>
                 <select class="form-control select">
                     <option>Escolher um nível</option>
                     <option>Fundamental</option>
@@ -92,13 +92,13 @@
                     <option>Pós-Graduação</option>
                 </select>
 
-                <h3>Cursos</h3>
+                <h3 class="mt-1 display-4" style="font-size: 30px;">Cursos</h3>
                 <select class="form-control select">
                     <option>Escolher um curso</option>
                     <option></option>
                 </select>
 
-                <h3>Tipo</h3>
+                <h3 class="mt-1 display-4" style="font-size: 30px;">Tipo</h3>
                 <select class="form-control select">
                     <option>Escolher um tipo</option>
                     <option>Concomitante</option>
@@ -106,19 +106,19 @@
                     <option>integrado</option>
                 </select>
 
-                <h3>Especialidade (EJA)</h3>
+                <h3 class="mt-1 display-4" style="font-size: 30px;">Especialidade (EJA)</h3>
                 <div>
-                    <input type="radio" name="eja_sim" id="eja_sim"> Sim
-                    <input type="radio" name="eja_nao" id="eja_nao" class="mb-3"> Não
+                    <input type="radio" name="eja" id="eja_sim"> Sim
+                    <input type="radio" name="eja" id="eja_nao" class="mb-3" checked> Não
                 </div>
 
-                <h3>Modalidade</h3>
+                <h3 class="mt-1 display-4" style="font-size: 30px;">Modalidade</h3>
                 <div>
-                    <input type="radio" name="presencial" id="presencial"> Presencial
-                    <input type="radio" name="ead" id="ead"> EAD
+                    <input type="radio" name="modalidade" id="presencial" checked> Presencial
+                    <input type="radio" name="modalidade" id="ead"> EAD
                 </div>
 
-                <button class="btn btn-success btn-block mt-4" type="button">Filtrar</button>
+                <a href="#cursos" style="text-decoration:none;"> <button class="btn btn-success btn-block mt-4" type="button">Filtrar</button> </a>
 
               </div><!--COLUNA DE FILTROS-->
 
@@ -137,29 +137,81 @@
 
     </section><!--Fim Section-->
 
-    <section class="d-flex" id="sobre"><!--Início Section Sobre-->
+    <section class="d-flex" id="cursos"><!--Início Section Cursos-->
       
       <div class="container align-self-center">
         <div class="row">
-          <div class="col-md-12 coluna">
-            Conteudo 'Sobre'
+          <div class="col-md-12 coluna"> <!--Conteudo Cursos-->
+
+            <h3 class="display-4" style="font-size: 30px;">Informações do Câmpus (SELECIONADO)</h3>
+            <p>Endereço: (ENDEREÇO DO CÂMPUS SELECIONADO)</p>
+            <h4 class="display-4" style="font-size: 25px;">Cursos oferecidos:</h4>
+
+            <!--Tabela de cursos para modalidades-->
+
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Cidade</th>
+                  <th>Cursos</th>
+                  <th>Modalidades</th>
+                </tr>
+              </thead>
+        
+              <tbody>
+                <tr>
+                  <td>Capivari</td>
+                  <td>ADS</td>
+                  <td>Superior</td>
+                </tr>
+                <tr>
+                  <td>Capivari</td>
+                  <td>Química</td>
+                  <td>Técnico Integrado</td>
+                </tr>
+                <tr>
+                  <td>Capivari</td>
+                  <td>Química</td>
+                  <td>Licenciatura</td>
+                </tr>
+              </tbody>
+        
+            </table>
+
+          </div>
+        </div>
+
           </div>
         </div>
       </div>
 
-    </section><!--Fim Section Sobre-->
+    </section><!--Fim Section Cursos-->
 
-    <section class="d-flex" id="bcd"><!--Início Section BCD-->
-      
-      <div class="container align-self-center">
+    <hr style="background-color: #e5e5e5;"><!--Divisor entre as seções-->
+
+    <section class="caixa"><!--Início Section Sobre e BCD-->
+      <div class="container">
         <div class="row">
-          <div class="col-md-12 coluna">
-            Conteudo 'BCD'
+          <div id="sobre" class="col-md-6" style="border-right:1px solid #e5e5e5;">
+            <h4 class="mt-1 display-4" style="font-size: 40px;">Sobre</h4>
+            <p>
+              Trata-se de um projeto que visa a produção de uma base cartográfica digital do IFSP, com o objetivo de inventariar e divulgar 
+              os mais diversos dados sobre a instituição e auxiliar os usuários do sistema na busca por informações de forma simples 
+              e objetiva com o auxílio de mapas como ferramenta nas mais variadas aplicações institucionais para a comunidade interna e externa. 
+            </p>
+            <p>Assim como, a contínua alimentação e ampliação dos dados cadastrados, de forma a tornar a base de dados cada vez mais completa
+              e atualizada conforme as demandas da sociedade, comunidade acadêmica, organizações produtivas, agentes culturais e demais usuários. 
+              Portanto, o produto final poderá atender novas demandas e constituir uma tecnologia passível de licenciamento e atender outros 
+              Institutos Federais ou organizações interessadas em apresentar dados em mapas.</p>
+          </div>
+          <div id="bcd" class="col-md-6">
+            <h4 class="mt-1 display-4" style="font-size: 40px;">BCD - Base Cartográfica Digital</h4>
+            <p> <i>Escrever aqui algo sobre a BCD...</i> </p>
+            </p>
           </div>
         </div>
       </div>
-
-    </section><!--Fim Section BCD-->
+    </section><!--Fim Section Sobre e BCD-->
 
     <footer><!--Inicio Footer-->
 
@@ -172,19 +224,19 @@
                   <h4>Menu</h4>
                   <ul class="navbar-nav">
                     <li>
-                      <a href="">Home</a>
+                      <a href="index.html">Home</a>
                     </li>
                     <li>
-                      <a href="">Sobre</a>
+                      <a href="#cursos">Cursos</a>
                     </li>
                     <li>
-                      <a href="">Cursos</a>
+                      <a href="#sobre">Sobre</a>
                     </li>
                     <li>
-                      <a href="">BCD</a>
+                      <a href="#bcd">BCD</a>
                     </li>
                     <li>
-                      <a href="">Entrar como ADM</a>
+                      <a href="" onclick="alert('Redirecionará para a área Administrativa')">Entrar como ADM</a>
                     </li>
                   </ul>
                 </div>
