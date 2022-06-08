@@ -4,10 +4,9 @@
 }
 
 header{
-    /*margin: 8px;*/
     padding: 1px;
     background-color: #085f18; /* For browsers that do not support gradients */
-    background-image: linear-gradient( #065215b9, #0e8624);
+    background-image: linear-gradient( #0652154d, #0e8624);
 }
 
 header h5{
@@ -20,14 +19,10 @@ section{
     margin-bottom: 10px;
 }
 
-section, footer{
-    background: rgba(245, 245, 245, 0.696);
-}
-
 footer{
 
-    background-color: #000; /* For browsers that do not support gradients */
-    background-image: linear-gradient( #0e8624 , #065215b9);
+    background-color: #085f18; /* For browsers that do not support gradients */
+    background-image: linear-gradient( #0e8624 , #0652154d);
 
     padding: 50px 0px 20px 0px;
     position: relative;
@@ -92,6 +87,14 @@ footer ul li{
     height: 500px;
 }
 
+#sobre{
+    border-right:1px solid #e5e5e5;
+}
+
+#buscar-cidade{
+    width: 300px;
+}
+
 #form-buscar-cidade{
     margin-left: 355px;
 }
@@ -126,3 +129,225 @@ footer ul li{
 	padding: 60px 0;
 	border-bottom: 1px solid #e5e5e5;
 }
+
+/*Media Query*/
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) { 
+
+    #titulo{
+        padding: 35px;
+    }
+
+    #img_topo{
+        width: 130px;
+    }
+
+    #nav-principal a{
+        background-color: unset;
+        font-size: 15px;
+        font-family: 'Arial Black', sans-serif;
+        color: rgb(255, 255, 255);
+
+        margin-left: 25px;
+    }
+
+    #sobre{
+        border-right: none;
+    }
+
+    #coluna-form{
+        border: none;
+    }
+
+    #buscar-cidade{
+        width: 381px;
+    }
+
+    #form-buscar-cidade{
+        margin-left: 0px;
+    }
+
+    #map { 
+        margin-top: 10px;
+        margin-left: -10px;
+        height: 400px;
+        width: 500px;
+    }
+
+    #img_footer{
+        width: 100px;
+        margin-left: 30px;
+    }
+
+    #coluna-footer-menu{
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+
+    #coluna-footer-links{
+        margin-top: -147px;
+        margin-left: 150px;
+    }
+
+ }
+
+ /* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+    #titulo{
+        padding: 40px;
+    }
+
+    #img_topo{
+        width: 130px;
+    }
+
+    #nav-principal a{
+        background-color: unset;
+        font-size: 15px;
+        font-family: 'Arial Black', sans-serif;
+        color: rgb(255, 255, 255);
+
+        margin-left: 20px;
+    }
+
+    #sobre{
+        border-right: none;
+    }
+
+    #coluna-form{
+        border: none;
+    }
+
+    #form-buscar-cidade{
+        margin-left: 0px;
+    }
+
+    #buscar-cidade{
+        width: 437px;
+    }
+
+    #map { 
+        margin-top: 10px;
+        margin-left: -30px;
+        height: 400px;
+        width: 570px;
+    }
+
+    #img_footer{
+        width: 110px;
+        margin-left: 30px;
+    }
+
+    #coluna-footer-menu{
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+
+    #coluna-footer-links{
+        margin-top: -150px;
+        margin-left: 180px;
+    }
+
+    footer h4{
+        font-size: 20px;
+    }
+
+    footer #coluna-footer-menu ul li a{
+        font-size: 14px;
+    }
+
+ }
+
+ /* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+    #nav-principal{
+        margin-left: -120px;
+        margin-bottom: -10px;
+    }
+
+    #titulo{
+        margin-top: -28px;
+    }
+
+    #titulo-H5{
+        margin-bottom: 80px;
+        width: 300px;
+    }
+
+    #titulo-fonte{
+        margin-top: -125px;
+    }
+
+    #form-buscar-cidade{
+        margin-left: 0px;
+    }
+
+    #buscar-cidade{
+        width: 377px;
+    }
+
+    #map { 
+        margin-top: 10px;
+        margin-left: 0px;
+        height: 415px;
+        width: 480px;
+    }
+
+ }
+
+ /* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+    #nav-principal{
+        margin-left: -120px;
+        margin-bottom: 0px;
+    }
+
+    #titulo{
+        margin-top: -20px;
+    }
+
+    #titulo-H5{
+        margin-bottom: 80px;
+        width: 300px;
+    }
+
+    #titulo-fonte{
+        margin-top: -125px;
+    }
+
+    #form-buscar-cidade{
+        margin-left: 0px;
+    }
+
+    #buscar-cidade{
+        width: 537px;
+    }
+
+    #map { 
+        margin-top: 10px;
+        margin-left: 0px;
+        height: 415px;
+        width: 635px;
+    }
+
+ }
+
+ /* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+
+    #buscar-cidade{
+        width: 302px;
+    }
+
+    #map { 
+        margin-top: 10px;
+        margin-left: -10px;
+        height: 415px;
+        width: 770px;
+    }
+
+ }

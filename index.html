@@ -36,11 +36,11 @@
         <nav class="navbar navbar-expand-md">
           <div class="container">
             <a href="index.html" style="margin-right: 70px; padding: 5px;">
-              <img src="imgs/ifsp-logo-removebg-preview.png" width="170px">
+              <img id="img_topo" src="imgs/ifsp-logo-removebg-preview.png" width="150px">
             </a>        
 
             <div id="titulo">
-                <h5>IFSP - Mapa cartográfico digital</h5>
+                <h5 id="titulo-H5">IFSP - Mapa cartográfico digital</h5>
                 <h6 id="titulo-fonte">Câmpus Capivari</h6>
             </div>
 
@@ -63,9 +63,6 @@
                 <li class="nav-item">
                   <a href="#bcd" class="nav-link">BCD</a>
                 </li>
-  
-                <li class="nav-item divisor"></li>
-
                 <li class="nav-item">
                   <a href="" onclick="alert('Redirecionará para a área Administrativa')" class="nav-link">Entrar ADM</a>
                 </li>
@@ -83,7 +80,7 @@
 
               <div class="col-md-4 coluna" id="coluna-form"> <!--COLUNA DE FILTROS-->
 
-                <h3 class="mt-1 display-4" style="font-size: 30px;">Nível</h3>
+                <h3 class="mt-1 display-4" style="font-size: 25px;">Nível</h3>
                 <select class="form-control select">
                     <option>Escolher um nível</option>
                     <option>Fundamental</option>
@@ -92,13 +89,13 @@
                     <option>Pós-Graduação</option>
                 </select>
 
-                <h3 class="mt-1 display-4" style="font-size: 30px;">Cursos</h3>
+                <h3 class="mt-1 display-4" style="font-size: 25px;">Cursos</h3>
                 <select class="form-control select">
                     <option>Escolher um curso</option>
                     <option></option>
                 </select>
 
-                <h3 class="mt-1 display-4" style="font-size: 30px;">Tipo</h3>
+                <h3 class="mt-1 display-4" style="font-size: 25px;">Tipo</h3>
                 <select class="form-control select">
                     <option>Escolher um tipo</option>
                     <option>Concomitante</option>
@@ -106,30 +103,33 @@
                     <option>integrado</option>
                 </select>
 
-                <h3 class="mt-1 display-4" style="font-size: 30px;">Especialidade (EJA)</h3>
+                <h3 class="mt-1 display-4" style="font-size: 25px;">Especialidade (EJA)</h3>
                 <div>
                     <input type="radio" name="eja" id="eja_sim"> Sim
                     <input type="radio" name="eja" id="eja_nao" class="mb-3" checked> Não
                 </div>
 
-                <h3 class="mt-1 display-4" style="font-size: 30px;">Modalidade</h3>
+                <h3 class="mt-1 display-4" style="font-size: 25px;">Modalidade</h3>
                 <div>
                     <input type="radio" name="modalidade" id="presencial" checked> Presencial
                     <input type="radio" name="modalidade" id="ead"> EAD
                 </div>
 
-                <a href="#cursos" style="text-decoration:none;"> <button class="btn btn-success btn-block mt-4" type="button">Filtrar</button> </a>
+                <a href="#cursos" style="text-decoration:none;"> <button class="btn btn-outline-success btn-block mt-4" type="button">Filtrar</button> </a>
 
               </div><!--COLUNA DE FILTROS-->
 
               <div class="col-md-8 coluna" id="coluna-mapa"><!--COLUNA DO MAPA-->
 
-                <form class="form-inline mt-1" id="form-buscar-cidade">
-                    <input type="text" style="width: 300px;" class="form-control" placeholder="Digite a cidade  Ex: Capivari">
-                    <button class="btn btn-outline-success">Buscar</button>
-                </form>
+                <div class="">
+                  <form class="form-inline mt-1" id="form-buscar-cidade">
+                      <input type="text" id="buscar-cidade" class="form-control" placeholder="Digite a cidade  Ex: Capivari">
+                      <button class="btn btn-outline-success">Buscar</button>
+                  </form>
+                </div>
 
                 <div id="map"></div>
+
               </div>
 
             </div>
@@ -150,7 +150,7 @@
             <!--Tabela de cursos para modalidades-->
 
             <table class="table table-striped">
-              <thead class="thead-dark">
+              <thead class="" style="background-color: #0e8624d0; color: white;">
                 <tr>
                   <th>Cidade</th>
                   <th>Cursos</th>
@@ -192,17 +192,13 @@
     <section class="caixa"><!--Início Section Sobre e BCD-->
       <div class="container">
         <div class="row">
-          <div id="sobre" class="col-md-6" style="border-right:1px solid #e5e5e5;">
+          <div id="sobre" class="col-md-6">
             <h4 class="mt-1 display-4" style="font-size: 40px;">Sobre</h4>
             <p>
               Trata-se de um projeto que visa a produção de uma base cartográfica digital do IFSP, com o objetivo de inventariar e divulgar 
               os mais diversos dados sobre a instituição e auxiliar os usuários do sistema na busca por informações de forma simples 
               e objetiva com o auxílio de mapas como ferramenta nas mais variadas aplicações institucionais para a comunidade interna e externa. 
             </p>
-            <p>Assim como, a contínua alimentação e ampliação dos dados cadastrados, de forma a tornar a base de dados cada vez mais completa
-              e atualizada conforme as demandas da sociedade, comunidade acadêmica, organizações produtivas, agentes culturais e demais usuários. 
-              Portanto, o produto final poderá atender novas demandas e constituir uma tecnologia passível de licenciamento e atender outros 
-              Institutos Federais ou organizações interessadas em apresentar dados em mapas.</p>
           </div>
           <div id="bcd" class="col-md-6">
             <h4 class="mt-1 display-4" style="font-size: 40px;">BCD - Base Cartográfica Digital</h4>
@@ -218,9 +214,9 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-2">
-                  <a href="index.html"> <img src="imgs/ifsp-logo-removebg-preview.png" width="80"> </a>
+                  <a href="index.html"> <img id="img_footer" src="imgs/ifsp-logo-removebg-preview.png" width="80"> </a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3" id="coluna-footer-menu">
                   <h4>Menu</h4>
                   <ul class="navbar-nav">
                     <li>
@@ -236,11 +232,11 @@
                       <a href="#bcd">BCD</a>
                     </li>
                     <li>
-                      <a href="" onclick="alert('Redirecionará para a área Administrativa')">Entrar como ADM</a>
+                      <a href="" onclick="alert('Redirecionará para a área Administrativa')">Entrar ADM</a>
                     </li>
                   </ul>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3" id="coluna-footer-links">
                   <h4>Links úteis</h4>
                   <ul class="navbar-nav">
                     <li>
@@ -254,14 +250,14 @@
                 <div class="col-md-4">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/IFSaoPaulo" target="_blank"><img src="imgs/facebook.png"></a>
+                      <a href="https://www.facebook.com/IFSaoPaulo" target="_blank"><img src="imgs/facebook.png" width="47"></a>
                     </li>
                     <li>
-                      <a href="https://www.instagram.com/ifsp_oficial/" target="_blank"><img src="imgs/instagram.png"></a>
+                      <a href="https://www.instagram.com/ifsp_oficial/" target="_blank"><img src="imgs/instagram.png" width="47"></a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/ifsaopaulo" target="_blank"><img src="imgs/twitter.png"></a>
-                      </li>
+                        <a href="https://twitter.com/ifsaopaulo" target="_blank"><img src="imgs/twitter.png" width="47"></a>
+                    </li>
                   </ul>
                 </div>
               </div>
