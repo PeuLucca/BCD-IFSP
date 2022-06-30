@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa Digital - Leaflet</title>
+<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+<!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script-->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+
+<link rel="stylesheet" href="./style/mystyle.css">
+</head>
+<body>
+
+
+<div class="grid-container">
+<div id='map'></div>
+<div>
+<strong>Campus no estado:</strong>
+<br>
+	<a href="./campi.php?id=12&lat=-21.783653&lon=-48.210896&nome=Araraquara">Araraquara</a><br>
+	<a href="./campi.php?id=13&lat=-23.078159&lon=-48.926270&nome=Avaré">Avaré</a><br>
+	<a href="./campi.php?id=14&lat=-20.540842&lon=-48.549595&nome=Barretos">Barretos</a><br>
+	<a href="./campi.php?id=15&lat=-21.249365&lon=-50.313499&nome=Birigui">Birigui</a><br>
+	<a href="./campi.php?id=16&lat=-23.288162&lon=-47.652241&nome=Boituva">Boituva</a><br>
+	<a href="./campi.php?id=17&lat=-22.948547&lon=-46.558475&nome=Bragança Paulista">Bragança Paulista</a><br>
+	<a href="./campi.php?id=4&lat=-22.948071&lon=-47.149746&nome=Campinas">Campinas</a><br>
+	<a href="./campi.php?id=9&lat=-22.742514&lon=-45.592594&nome=Campos do Jordão">Campos do Jordão</a><br>
+	<a href="./campi.php?id=3&lat=-22.976465&lon=-47.473232&nome=Capivari">Capivari</a><br>
+	<a href="./campi.php?id=18&lat=-23.636669&lon=-45.425877&nome=Caraguatatuba">Caraguatatuba</a><br>
+	<a href="./campi.php?id=19&lat=-21.146473&lon=-48.946163&nome=Catanduva">Catanduva</a><br>
+	<a href="./campi.php?id=10&lat=-23.928156&lon=-46.412361&nome=Cubatão">Cubatão</a><br>
+	<a href="./campi.php?id=20&lat=-23.438601&lon=-46.537434&nome=Guarulhos">Guarulhos</a><br>
+	<a href="./campi.php?id=5&lat=-22.841623&lon=-47.228104&nome=Hortolândia">Hortolândia</a><br>
+	<a href="./campi.php?id=21&lat=-20.420612&lon=-51.333229&nome=Ilha Solteira">Ilha Solteira</a><br>
+	<a href="./campi.php?id=1&lat=-23.587736&lon=-48.019886&nome=Itapetininga">Itapetininga</a><br>
+	<a href="./campi.php?id=28&lat=-23.485126&lon=-46.342346&nome=Itaquaquecetuba">Itaquaquecetuba</a><br>
+	<a href="./campi.php?id=23&lat=-23.317486&lon=-45.983715&nome=Jacareí ">Jacareí </a><br>
+	<a href="./campi.php?id=8&lat=-23.192863&lon=-46.877003&nome=Jundiaí">Jundiaí</a><br>
+	<a href="./campi.php?id=22&lat=-21.624083&lon=-48.348137&nome=Matão">Matão</a><br>
+	<a href="./campi.php?id=29&lat=-22.693308&lon=-47.625542&nome=Piracicaba">Piracicaba</a><br>
+	<a href="./campi.php?id=30&lat=-23.488420&lon=-46.734707&nome=São Paulo">Pirituba</a><br>
+	<a href="./campi.php?id=31&lat=-21.785051&lon=-52.111469&nome=Presidente Epitácio">Presidente Epitácio</a><br>
+	<a href="./campi.php?id=11&lat=-24.533045&lon=-47.869179&nome=Registro">Registro</a><br>
+	<a href="./campi.php?id=2&lat=-23.196306&lon=-47.302010&nome=Salto">Salto</a><br>
+	<a href="./campi.php?id=26&lat=-21.969973&lon=-47.878510&nome=São Carlos">São Carlos</a><br>
+	<a href="./campi.php?id=27&lat=-21.966873&lon=-46.812706&nome=São João da Boa Vista">São João da Boa Vista</a><br>
+	<a href="./campi.php?id=32&lat=-20.805265&lon=-49.404770&nome=São José do Rio Preto">São José do Rio Preto</a><br>
+	<a href="./campi.php?id=37&lat=-23.190969&lon=-45.849300&nome=São José dos Campos">São José dos Campos</a><br>
+	<a href="./campi.php?id=33&lat=-23.498882&lon=-46.438969&nome=São Miguel Paulista">São Miguel Paulista</a><br>
+	<a href="./campi.php?id=6&lat=-23.544476&lon=-46.679535&nome=São Paulo">São Paulo</a><br>
+	<a href="./campi.php?id=7&lat=-23.554550&lon=-47.150303&nome=São Roque">São Roque</a><br>
+	<a href="./campi.php?id=24&lat=-21.143015&lon=-47.972973&nome=Sertãozinho ">Sertãozinho </a><br>
+	<a href="./campi.php?id=34&lat=-23.488354&lon=-47.444443&nome=Sorocaba">Sorocaba</a><br>
+	<a href="./campi.php?id=25&lat=-23.535414&lon=-46.326752&nome=Suzano ">Suzano </a><br>
+	<a href="./campi.php?id=35&lat=-21.923101&lon=-50.521896&nome=Tupã">Tupã</a><br>
+	<a href="./campi.php?id=36&lat=-20.403891&lon=-49.968292&nome=Votuporanga">Votuporanga</a><br>
+</div>
+
+<script>
+var cities = L.layerGroup();
+var eja = L.layerGroup();
+var ead = L.layerGroup();
+var eadPres = L.layerGroup();
+var presencial = L.layerGroup();
+
+	L.marker([-21.783653, -48.210896]).bindPopup("Araraquara.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(cities);
+	L.marker([-23.078159, -48.926270]).bindPopup("Avaré.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(cities);
+	L.marker([-20.540842, -48.549595]).bindPopup("Barretos.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(cities);
+	L.marker([-21.249365, -50.313499]).bindPopup("Birigui.<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(cities);
+	L.marker([-23.288162, -47.652241]).bindPopup("Boituva.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(cities);
+	L.marker([-22.948547, -46.558475]).bindPopup("Bragança Paulista.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(cities);
+	L.marker([-22.948071, -47.149746]).bindPopup("Campinas.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(cities);
+	L.marker([-22.742514, -45.592594]).bindPopup("Campos do Jordão.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(cities);
+	L.marker([-22.976465, -47.473232]).bindPopup("Capivari.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(cities);
+	L.marker([-23.636669, -45.425877]).bindPopup("Caraguatatuba.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(cities);
+	L.marker([-21.146473, -48.946163]).bindPopup("Catanduva.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(cities);
+	L.marker([-23.928156, -46.412361]).bindPopup("Cubatão.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(cities);
+	L.marker([-23.438601, -46.537434]).bindPopup("Guarulhos.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(cities);
+	L.marker([-22.841623, -47.228104]).bindPopup("Hortolândia.<br>Av. Thereza Ana Cecon Breda, 1896 - Vila Sao Pedro, Hortolândia - SP, 13183-091").addTo(cities);
+	L.marker([-20.420612, -51.333229]).bindPopup("Ilha Solteira.<br>Alameda Tucuruí, 164, Ilha Solteira - SP, 15385-000").addTo(cities);
+	L.marker([-23.587736, -48.019886]).bindPopup("Itapetininga.<br>Av. João Olímpio de Oliveira, 1561 - Vila Asem, Itapetininga - SP, 18202-000").addTo(cities);
+	L.marker([-23.485126, -46.342346]).bindPopup("Itaquaquecetuba.<br>R. Primeiro de Maio, 500 - Estação, Itaquaquecetuba - SP, 08571-050 ").addTo(cities);
+	L.marker([-23.317486, -45.983715]).bindPopup("Jacareí .<br>R. Antônio Fogaça de Almeida, 200 - Jardim America, Jacareí - SP, 12322-030").addTo(cities);
+	L.marker([-23.192863, -46.877003]).bindPopup("Jundiaí.<br>Av. Dr. Cavalcanti, 396 - Centro, Jundiaí - SP, 13201-003").addTo(cities);
+	L.marker([-21.624083, -48.348137]).bindPopup("Matão.<br>R. Estéfano D'avassi, 625 - Nova Cidade, Matão - SP, 15991-502").addTo(cities);
+	L.marker([-22.693308, -47.625542]).bindPopup("Piracicaba.<br>Santa Rosa Ipes, Piracicaba - State of São Paulo").addTo(cities);
+	L.marker([-23.488420, -46.734707]).bindPopup("Pirituba.<br>Av. Mutinga, 951 - Jardim Santo Elias, São Paulo - SP, 05110-000").addTo(cities);
+	L.marker([-21.785051, -52.111469]).bindPopup("Presidente Epitácio.<br>R. José Ramos Júnior, 27-50 - Jardim Tropical, Pres. Epitácio - SP, 19470-000").addTo(cities);
+	L.marker([-24.533045, -47.869179]).bindPopup("Registro.<br>Av. Clara Gianotti de Souza, Registro - SP, 11900-000").addTo(cities);
+	L.marker([-23.196306, -47.302010]).bindPopup("Salto.<br>R. Rio Branco, 1780 - Vila Teixeira, Salto - SP, 13320-271").addTo(cities);
+	L.marker([-21.969973, -47.878510]).bindPopup("São Carlos.<br>Estrada Municipal Paulo Eduardo de Almeida Prado - São Carlos - SP - CEP: 13.565-820, São Carlos - S").addTo(cities);
+	L.marker([-21.966873, -46.812706]).bindPopup("São João da Boa Vista.<br>Av Marginal 585 Fazenda Nossa Senhora Aparecida do Jaguari, São João da Boa Vista - SP, 13871-298").addTo(cities);
+	L.marker([-20.805265, -49.404770]).bindPopup("São José do Rio Preto.<br>R. Dr. Eduardo Nielsem, 420 - Jardim Congonhas, São José do Rio Preto - SP, 15030-070").addTo(cities);
+	L.marker([-23.190969, -45.849300]).bindPopup("São José dos Campos.<br>Rod. Pres. Dutra, km 145 - s/n - Jardim Diamante, São José dos Campos - SP, 12223-201").addTo(cities);
+	L.marker([-23.498882, -46.438969]).bindPopup("São Miguel Paulista.<br>R. Ten. Miguel Délia, 105 - São Miguel, Paulista - SP, 08021-090").addTo(cities);
+	L.marker([-23.544476, -46.679535]).bindPopup("São Paulo.<br>R. Pedro Vicente, 625 - Canindé, São Paulo - SP, 01109-010").addTo(cities);
+	L.marker([-23.554550, -47.150303]).bindPopup("São Roque.<br>Rodovia Prefeito Quintino de Lima, 2100 - Paisagem Colonial, São Roque - SP, 18145-090").addTo(cities);
+	L.marker([-21.143015, -47.972973]).bindPopup("Sertãozinho .<br>R. Américo Ambrósio, 269 - Jardim Canaa, Sertãozinho - SP, 14169-263").addTo(cities);
+	L.marker([-23.488354, -47.444443]).bindPopup("Sorocaba.<br>R. Maria Cinto de Biaggi, 130 - Jardim Santa Rosália, Sorocaba - SP, 18095-410").addTo(cities);
+	L.marker([-23.535414, -46.326752]).bindPopup("Suzano .<br>Av. Mogi das Cruzes, 1501 - Parque Suzano, Suzano - SP, 08673-010").addTo(cities);
+	L.marker([-21.923101, -50.521896]).bindPopup("Tupã.<br>Av. dos Universitários, 145 - Jardim Ipiranga, Tupã - SP, 17607-220").addTo(cities);
+	L.marker([-20.403891, -49.968292]).bindPopup("Votuporanga.<br>Av. Jerônimo Figueira da Costa, 3014 - Pozzobon, Votuporanga - SP, 15503-110").addTo(cities);
+
+	L.marker([-23.078159, -48.926270]).bindPopup("Avaré.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(eja);
+	L.marker([-20.540842, -48.549595]).bindPopup("Barretos.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(eja);
+	L.marker([-21.249365, -50.313499]).bindPopup("Birigui.<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(eja);
+	L.marker([-22.976465, -47.473232]).bindPopup("Capivari.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(eja);
+	L.marker([-21.783653, -48.210896]).bindPopup("Araraquara.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(eja);
+	L.marker([-22.948071, -47.149746]).bindPopup("Campinas.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(eja);
+	L.marker([-22.948071, -47.149746]).bindPopup("Campinas.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(eja);
+	L.marker([-23.636669, -45.425877]).bindPopup("Caraguatatuba.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(eja);
+
+	L.marker([-23.288162, -47.652241]).bindPopup("EAD - Técnico em Secretaria Escolar.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(ead);
+	L.marker([-23.636669, -45.425877]).bindPopup("Aquicultura.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(ead);
+	L.marker([-23.288162, -47.652241]).bindPopup("Licenciatura em Pedagogia e EPT.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(ead);
+
+	L.marker([-22.948071, -47.149746]).bindPopup("Especialização em Ciência de Dados.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(eadPres);
+
+	L.marker([-23.078159, -48.926270]).bindPopup("Hospedagem.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Hospedagem.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-21.249365, -50.313499]).bindPopup("Técnico em Comércio.<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(presencial);
+	L.marker([-22.976465, -47.473232]).bindPopup("Administração.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Administração.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Agroindústria.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Lazer.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Mecatrônica.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Agropecuária.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Alimentos.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-23.288162, -47.652241]).bindPopup("Redes de Computadores.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Técnico em Mecânica.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Mecatrônica.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Redes de Computadores.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Mecatrônica.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+	L.marker([-21.783653, -48.210896]).bindPopup("Mecatrônica.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(presencial);
+	L.marker([-21.783653, -48.210896]).bindPopup("Informática.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Eventos.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Mecânica.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Agronegócio.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Eventos.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-21.249365, -50.313499]).bindPopup("Administração.<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(presencial);
+	L.marker([-21.249365, -50.313499]).bindPopup("Automação industrial.<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(presencial);
+	L.marker([-23.288162, -47.652241]).bindPopup("Automação industrial.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(presencial);
+	L.marker([-23.288162, -47.652241]).bindPopup("Logística.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Mecatrônica.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Informática.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Eletroeletronica.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Edificações.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Eventos.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Hospedagem.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Administração.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Edificações.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Informática para Internet.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Meio Ambiente.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Automação industrial.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Automação industrial.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Informática para Internet.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+	L.marker([-21.783653, -48.210896]).bindPopup("Matemática.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Letras - Português e Espanhol.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Ciências Biológicas.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Ciências Biológicas.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Química.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Matemática.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Matemática.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Pedagogia.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-22.976465, -47.473232]).bindPopup("Química.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Física     .<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Matemática.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Química.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Letras - Português.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Matemática.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+	L.marker([-21.783653, -48.210896]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(presencial);
+	L.marker([-21.783653, -48.210896]).bindPopup("Engenharia Mecânica.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Engenharia de Biossistemas.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Tecnologia em Gastronomia.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-23.078159, -48.926270]).bindPopup("Tecnologia em Agronegócio.<br>Av. Prof. Célso Ferreira da Silva, 1333 - Jardim Europa II, Avaré - SP, 18707-150").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Agronomia.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Turismo .<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-21.249365, -50.313499]).bindPopup("Tecnologia em Mecatrônica Industrial.<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(presencial);
+	L.marker([-21.249365, -50.313499]).bindPopup("Tecnologia em Sistemas para Internet.<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(presencial);
+	L.marker([-23.288162, -47.652241]).bindPopup("Engenharia de Produção.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(presencial);
+	L.marker([-23.288162, -47.652241]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(presencial);
+	L.marker([-23.288162, -47.652241]).bindPopup("Gestão da Produção Industrial.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Engenharia de Controle e Automação.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Tecnologia em Eletrônica Industrial.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Tecnologia em Eletrônica Industrial.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Tecnologia em Gestão de Turismo.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-22.976465, -47.473232]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(presencial);
+	L.marker([-22.976465, -47.473232]).bindPopup("Tecnologia em Processos Químicos.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Engenharia Civil.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Tecnologia em Processos Gerenciais.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Engenharia de Controle e Automação.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Tecnologia em Mecatrônica Industrial.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Tecnologia em Automação Industrial.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Tecnologia em Gestão de Turismo.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Engenharia de Controle e Automação.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Turismo .<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Análise e Desenvolvimento de Sistemas.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Engenharia de Controle e Automação.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Tecnologia em Automação Industrial.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+	L.marker([-21.783653, -48.210896]).bindPopup("Ensino de Ciências da Natureza e Matemática.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(presencial);
+	L.marker([-23.288162, -47.652241]).bindPopup("Especialização em Gestão da Tecnologia da Informação.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Especialização em Gestão Estratégica de Tecnologia da Informação (GETI).<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Especialização em Educação para Inserção Social.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Especialização em Tecnologias da Informação e Comunicação Aplicadas ao Ensino de Ciências.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.976465, -47.473232]).bindPopup("Tecnologia da Informação e Comunicação na Educação .<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Especialização em Gestão Financeira.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Saberes e Práticas para a Docência no Ensino Fundamental I.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Ensino de Ciências da Natureza e Matemática.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Internet das Coisas - IoT.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Gestão de sistemas de informação.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+	L.marker([-22.976465, -47.473232]).bindPopup("Informática.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(presencial);
+	L.marker([-22.976465, -47.473232]).bindPopup("Química.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(presencial);
+	L.marker([-22.976465, -47.473232]).bindPopup("Química.<br>Av. Dr. Ênio Pires de Camargo, 2971 - São João Batista, Capivari - SP, 13360-000").addTo(presencial);
+	L.marker([-21.783653, -48.210896]).bindPopup("Informática.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(presencial);
+	L.marker([-21.783653, -48.210896]).bindPopup("Mecânica.<br>Rua Doutor Aldo Benedito, R. Sebastião Pierri, 250 - Jardim Paulo Freire, Araraquara - SP, 14804-296").addTo(presencial);
+	L.marker([-20.540842, -48.549595]).bindPopup("Informática.<br>Av. C- Um, 250 – Bairro - Res. Ide Daher, Barretos - SP, 14781-502").addTo(presencial);
+	L.marker([-21.249365, -50.313499]).bindPopup("Matemática.<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(presencial);
+	L.marker([-21.249365, -50.313499]).bindPopup("Física     .<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(presencial);
+	L.marker([-21.249365, -50.313499]).bindPopup("Engenharia de Computação  .<br>Residencial Portal da Pérola II - Rua Pedro Cavalo, 709 - Residencial Portal da Pérola II, Birigui - SP, 16201-407").addTo(presencial);
+	L.marker([-23.288162, -47.652241]).bindPopup("Logística.<br>R. Zélia de Lima Rosa, 100 - Recanto das Primaveras I, Boituva - SP, 18552-252").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Informática.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-22.948547, -46.558475]).bindPopup("Matemática.<br>Av. Maj. Fernando Valle, 2013 - São Miguel, Bragança Paulista - SP, 12903-000").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Auxiliar de Agroecologia.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Eletrônica.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Telecomunicações.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Informática.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.948071, -47.149746]).bindPopup("Engenharia Elétrica.<br>R. Heitor Lacerda Guedes, 1000 - Cidade Satélite Íris, Campinas - SP, 13059-581").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Informática.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-22.742514, -45.592594]).bindPopup("Edificações.<br>Rua Monsenhor José Vita, 280 - Abernéssia, Campos do Jordão - SP, 12460-000").addTo(presencial);
+	L.marker([-23.636669, -45.425877]).bindPopup("Administração.<br>Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP, 11665-071").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Fabricação Mecânica.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-21.146473, -48.946163]).bindPopup("Química.<br>Av. Pastor José Dutra de Moraes, 239 - Distrito Industrial Antônio Zácaro, Catanduva - SP, 15808-305").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Informática.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Eventos.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.928156, -46.412361]).bindPopup("Matemática.<br>R. Maria Cristina, 50 - Casqueiro, Cubatão - SP, 11533-160").addTo(presencial);
+	L.marker([-23.438601, -46.537434]).bindPopup("Automação industrial.<br>Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000").addTo(presencial);
+
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+	var mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+	var grayscale = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+	var streets = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+	var satellite = L.tileLayer(mbUrl, {id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+	
+
+    
+
+	var map = L.map('map', {
+		center: [-22.3, -48.4 ],
+		zoom: 7,
+		layers: [grayscale, cities]
+	});
+
+	var baseLayers = {
+		'Grayscale': grayscale,
+		'Streets': streets,
+		'Satellite':satellite
+	};
+
+	var overlays = {
+		'Campus do IFSP': cities
+	
+	};
+
+	var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+
+//	var crownHill = L.marker([-22.75, -48.09]).bindPopup('This is Crown Hill Park.');
+//	var rubyHill = L.marker([-22.68, -48.00]).bindPopup('This is Ruby Hill Park.');
+
+//	var parks = L.layerGroup([crownHill, rubyHill]);
+//	layerControl.addOverlay(parks, 'Parks');
+
+	layerControl.addOverlay(eja, 'EJA');
+	layerControl.addOverlay(ead, 'EAD');
+	layerControl.addOverlay(eadPres, 'EAD+Presencial');
+	layerControl.addOverlay(presencial, 'Presencial');
+
+</script>
+
+<script> // Script para configuração inicial do mapa LeafLet
+
+    var capivari = [-22.976218983260722, -47.47417220000783]
+    var map = L.map('map').setView(capivari, 13); // -22.976218983260722, -47.47417220000783
+
+    var marker = L.marker(capivari).addTo(map);
+
+    function onMapClick(e){
+        marker.bindPopup("<b>IFSP - Capivari </b><br> <a href='https://cpv.ifsp.edu.br/' target='_blank'>Clique aqui para ser redirecionado para o site do câmpus</a>").openPopup();
+    }
+
+    map.on('click', onMapClick);    
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+</script>
+
+</body>
+</html>

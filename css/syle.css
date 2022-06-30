@@ -15,10 +15,6 @@ header h5{
     /*font-family: 'Arial Black', sans-serif;*/
 }
 
-section{
-    margin-bottom: 10px;
-}
-
 footer{
 
     background-color: #085f18; /* For browsers that do not support gradients */
@@ -52,6 +48,17 @@ footer ul li{
     margin: 0 5px;
 }
 
+#coluna-mapa{
+    width: 500px;
+    margin: 100px;
+}
+
+#coluna-link{
+    width: 355px;
+    margin-left: 900px;
+    margin-top: -145px;
+}
+
 #titulo{
     margin-bottom: 10px;
 }
@@ -83,7 +90,6 @@ footer ul li{
 
 #coluna-form{
     /*border: 2px solid rgba(0, 128, 0, 0.514);*/
-    border-right: 1px solid #e5e5e5;
     height: 500px;
 }
 
@@ -99,15 +105,13 @@ footer ul li{
     margin-left: 355px;
 }
 
-#map { 
-    margin-top: 10px;
-    margin-left: -5px;
-    height: 445px;
-    width: 740px;
+#id-coluna-map{
+    margin-left: 500px;
+    width: 800px;
 }
 
 .coluna{   
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .select{
@@ -171,8 +175,8 @@ footer ul li{
     #map { 
         margin-top: 10px;
         margin-left: -10px;
-        height: 400px;
-        width: 500px;
+        width: 100px;
+        height: 100px;
     }
 
     #img_footer{
@@ -231,8 +235,8 @@ footer ul li{
     #map { 
         margin-top: 10px;
         margin-left: -30px;
-        height: 400px;
-        width: 570px;
+        width: 100px;
+    height: 100px;
     }
 
     #img_footer{
@@ -292,8 +296,8 @@ footer ul li{
     #map { 
         margin-top: 10px;
         margin-left: 0px;
-        height: 415px;
-        width: 480px;
+        width: 100px;
+        height: 100px;
     }
 
  }
@@ -330,8 +334,8 @@ footer ul li{
     #map { 
         margin-top: 10px;
         margin-left: 0px;
-        height: 415px;
-        width: 635px;
+        width: 100px;
+        height: 100px;
     }
 
  }
@@ -344,10 +348,35 @@ footer ul li{
     }
 
     #map { 
-        margin-top: 10px;
-        margin-left: -10px;
-        height: 415px;
-        width: 770px;
+        margin-top: -110px;
+        margin-left: -95px;
+        width: 780px;
+        height: 990px;
+    }
+
+    #coluna-mapa{
+        padding: 10px;
+        width: 500px;
+        margin: 100px;
+    }
+    
+    #coluna-link{
+        border: 1px solid #c6c5c5;
+        width: 600px;
+        height: 990px;
+        margin-left: 820px;
+        margin-top: -1100px;
+
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        background-color: #f7f8f8a8;
+    }
+
+    #coluna-link a{
+        font-size: 16px;
+        color: #979494;
     }
 
  }

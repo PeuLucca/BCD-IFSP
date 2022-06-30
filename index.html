@@ -40,7 +40,7 @@
             </a>        
 
             <div id="titulo">
-                <h5 id="titulo-H5">IFSP - Mapa cartográfico digital</h5>
+                <h5 id="titulo-H5">IFSP - Mapa Digital</h5>
                 <h6 id="titulo-fonte">Câmpus Capivari</h6>
             </div>
 
@@ -72,122 +72,61 @@
           </div>
         </nav>
     </header><!--Fim Cabeçalho-->
-    
-    <section class="d-flex"><!--Incio Section Principal-->
 
-        <div class="container align-self-center">
-            <div class="row">
+    <section class="d-flex" id="coluna-mapa" >
+      <div class="coluna">
+        <div id="map"></div>
+      </div>
+    </section>
 
-              <div class="col-md-4 coluna" id="coluna-form"> <!--COLUNA DE FILTROS-->
-
-                <h3 class="mt-1 display-4" style="font-size: 25px;">Nível</h3>
-                <select class="form-control select">
-                    <option>Escolher um nível</option>
-                    <option>Fundamental</option>
-                    <option>Médio</option>
-                    <option>Superior</option>
-                    <option>Pós-Graduação</option>
-                </select>
-
-                <h3 class="mt-1 display-4" style="font-size: 25px;">Cursos</h3>
-                <select class="form-control select">
-                    <option>Escolher um curso</option>
-                    <option></option>
-                </select>
-
-                <h3 class="mt-1 display-4" style="font-size: 25px;">Tipo</h3>
-                <select class="form-control select">
-                    <option>Escolher um tipo</option>
-                    <option>Concomitante</option>
-                    <option>Bacharelado</option>
-                    <option>integrado</option>
-                </select>
-
-                <h3 class="mt-1 display-4" style="font-size: 25px;">Especialidade (EJA)</h3>
-                <div>
-                    <input type="radio" name="eja" id="eja_sim"> Sim
-                    <input type="radio" name="eja" id="eja_nao" class="mb-3" checked> Não
-                </div>
-
-                <h3 class="mt-1 display-4" style="font-size: 25px;">Modalidade</h3>
-                <div>
-                    <input type="radio" name="modalidade" id="presencial" checked> Presencial
-                    <input type="radio" name="modalidade" id="ead"> EAD
-                </div>
-
-                <a href="#cursos" style="text-decoration:none;"> <button class="btn btn-outline-success btn-block mt-4" type="button">Filtrar</button> </a>
-
-              </div><!--COLUNA DE FILTROS-->
-
-              <div class="col-md-8 coluna" id="coluna-mapa"><!--COLUNA DO MAPA-->
-
-                <div class="">
-                  <form class="form-inline mt-1" id="form-buscar-cidade">
-                      <input type="text" id="buscar-cidade" class="form-control" placeholder="Digite a cidade  Ex: Capivari">
-                      <button class="btn btn-outline-success">Buscar</button>
-                  </form>
-                </div>
-
-                <div id="map"></div>
-
-              </div>
-
-            </div>
-        </div>
-
-    </section><!--Fim Section-->
-
-    <section class="d-flex" id="cursos"><!--Início Section Cursos-->
-      
-      <div class="container align-self-center">
-        <div class="row">
-          <div class="col-md-12 coluna"> <!--Conteudo Cursos-->
-
-            <h3 class="display-4" style="font-size: 30px;">Informações do Câmpus (SELECIONADO)</h3>
-            <p>Endereço: (ENDEREÇO DO CÂMPUS SELECIONADO)</p>
-            <h4 class="display-4" style="font-size: 25px;">Cursos oferecidos:</h4>
-
-            <!--Tabela de cursos para modalidades-->
-
-            <table class="table table-striped">
-              <thead class="" style="background-color: #0e8624d0; color: white;">
-                <tr>
-                  <th>Cidade</th>
-                  <th>Cursos</th>
-                  <th>Modalidades</th>
-                </tr>
-              </thead>
-        
-              <tbody>
-                <tr>
-                  <td>Capivari</td>
-                  <td>ADS</td>
-                  <td>Superior</td>
-                </tr>
-                <tr>
-                  <td>Capivari</td>
-                  <td>Química</td>
-                  <td>Técnico Integrado</td>
-                </tr>
-                <tr>
-                  <td>Capivari</td>
-                  <td>Química</td>
-                  <td>Licenciatura</td>
-                </tr>
-              </tbody>
-        
-            </table>
-
-          </div>
-        </div>
-
+    <section class="d-flex" id="coluna-link">
+      <div class="coluna">
+        <div>
+          <div>
+            <h3 style="margin-bottom: -15px;">Campus no estado:</h3>
+            <br>
+            <a href="./campi.php?id=12&lat=-21.783653&lon=-48.210896&nome=Araraquara">Araraquara</a><br>
+              <a href="./campi.php?id=13&lat=-23.078159&lon=-48.926270&nome=Avaré">Avaré</a><br>
+              <a href="./campi.php?id=14&lat=-20.540842&lon=-48.549595&nome=Barretos">Barretos</a><br>
+              <a href="./campi.php?id=15&lat=-21.249365&lon=-50.313499&nome=Birigui">Birigui</a><br>
+              <a href="./campi.php?id=16&lat=-23.288162&lon=-47.652241&nome=Boituva">Boituva</a><br>
+              <a href="./campi.php?id=17&lat=-22.948547&lon=-46.558475&nome=Bragança Paulista">Bragança Paulista</a><br>
+              <a href="./campi.php?id=4&lat=-22.948071&lon=-47.149746&nome=Campinas">Campinas</a><br>
+              <a href="./campi.php?id=9&lat=-22.742514&lon=-45.592594&nome=Campos do Jordão">Campos do Jordão</a><br>
+              <a href="./campi.php?id=3&lat=-22.976465&lon=-47.473232&nome=Capivari">Capivari</a><br>
+              <a href="./campi.php?id=18&lat=-23.636669&lon=-45.425877&nome=Caraguatatuba">Caraguatatuba</a><br>
+              <a href="./campi.php?id=19&lat=-21.146473&lon=-48.946163&nome=Catanduva">Catanduva</a><br>
+              <a href="./campi.php?id=10&lat=-23.928156&lon=-46.412361&nome=Cubatão">Cubatão</a><br>
+              <a href="./campi.php?id=20&lat=-23.438601&lon=-46.537434&nome=Guarulhos">Guarulhos</a><br>
+              <a href="./campi.php?id=5&lat=-22.841623&lon=-47.228104&nome=Hortolândia">Hortolândia</a><br>
+              <a href="./campi.php?id=21&lat=-20.420612&lon=-51.333229&nome=Ilha Solteira">Ilha Solteira</a><br>
+              <a href="./campi.php?id=1&lat=-23.587736&lon=-48.019886&nome=Itapetininga">Itapetininga</a><br>
+              <a href="./campi.php?id=28&lat=-23.485126&lon=-46.342346&nome=Itaquaquecetuba">Itaquaquecetuba</a><br>
+              <a href="./campi.php?id=23&lat=-23.317486&lon=-45.983715&nome=Jacareí ">Jacareí </a><br>
+              <a href="./campi.php?id=8&lat=-23.192863&lon=-46.877003&nome=Jundiaí">Jundiaí</a><br>
+              <a href="./campi.php?id=22&lat=-21.624083&lon=-48.348137&nome=Matão">Matão</a><br>
+              <a href="./campi.php?id=29&lat=-22.693308&lon=-47.625542&nome=Piracicaba">Piracicaba</a><br>
+              <a href="./campi.php?id=30&lat=-23.488420&lon=-46.734707&nome=São Paulo">Pirituba</a><br>
+              <a href="./campi.php?id=31&lat=-21.785051&lon=-52.111469&nome=Presidente Epitácio">Presidente Epitácio</a><br>
+              <a href="./campi.php?id=11&lat=-24.533045&lon=-47.869179&nome=Registro">Registro</a><br>
+              <a href="./campi.php?id=2&lat=-23.196306&lon=-47.302010&nome=Salto">Salto</a><br>
+              <a href="./campi.php?id=26&lat=-21.969973&lon=-47.878510&nome=São Carlos">São Carlos</a><br>
+              <a href="./campi.php?id=27&lat=-21.966873&lon=-46.812706&nome=São João da Boa Vista">São João da Boa Vista</a><br>
+              <a href="./campi.php?id=32&lat=-20.805265&lon=-49.404770&nome=São José do Rio Preto">São José do Rio Preto</a><br>
+              <a href="./campi.php?id=37&lat=-23.190969&lon=-45.849300&nome=São José dos Campos">São José dos Campos</a><br>
+              <a href="./campi.php?id=33&lat=-23.498882&lon=-46.438969&nome=São Miguel Paulista">São Miguel Paulista</a><br>
+              <a href="./campi.php?id=6&lat=-23.544476&lon=-46.679535&nome=São Paulo">São Paulo</a><br>
+              <a href="./campi.php?id=7&lat=-23.554550&lon=-47.150303&nome=São Roque">São Roque</a><br>
+              <a href="./campi.php?id=24&lat=-21.143015&lon=-47.972973&nome=Sertãozinho ">Sertãozinho </a><br>
+              <a href="./campi.php?id=34&lat=-23.488354&lon=-47.444443&nome=Sorocaba">Sorocaba</a><br>
+              <a href="./campi.php?id=25&lat=-23.535414&lon=-46.326752&nome=Suzano ">Suzano </a><br>
+              <a href="./campi.php?id=35&lat=-21.923101&lon=-50.521896&nome=Tupã">Tupã</a><br>
+              <a href="./campi.php?id=36&lat=-20.403891&lon=-49.968292&nome=Votuporanga">Votuporanga</a>
+            <br>
           </div>
         </div>
       </div>
-
-    </section><!--Fim Section Cursos-->
-
-    <hr style="background-color: #e5e5e5;"><!--Divisor entre as seções-->
+    </section>
 
     <section class="caixa"><!--Início Section Sobre e BCD-->
       <div class="container">
